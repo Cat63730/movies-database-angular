@@ -1,0 +1,7 @@
+<p class="name">{{actor.name}}</p>
+<div class="img-container">
+  <img [src]="'https://image.tmdb.org/t/p/w92/' + actor.profile_path" alt="Affiche du film" />
+</div>
+<p class="Birth">{{actor.birthday | date: "dd/MM/YYYY"}}</p>
+<p class="bio">{{actor.biography}}</p>
+

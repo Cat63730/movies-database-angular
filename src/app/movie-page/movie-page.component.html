@@ -1,0 +1,24 @@
+<div class="container">
+  <p class="tittle">{{movie.original_title}}</p>
+  <div class="genre-container" *ngFor="let genre of movie.genres">
+    <div class="genre">{{genre.name}}</div>
+  </div>
+  <p>Sortie le {{movie.release_date | date : "dd/MM/YYYY"}} </p>
+  <p class="overview">{{movie.overview}}</p>
+  <div class="img-container">
+    <img [src]="'https://image.tmdb.org/t/p/w92/' + movie.poster_path" alt="Affiche du film" />
+  </div>
+  <div class="favorite-container" *ngIf="isFavorite">
+    <i class="fa-sharp fa-solid fa-heart" (click)="handleFavorites(movie)"></i>
+  </div>
+  <div class="favorite-container" *ngIf="!isFavorite">
+    <i class="fa-sharp fa-regular fa-heart" (click)="handleFavorites(movie)"></i>
+  </div>
+  <div class="actors-container">
+    <div class="actors" *ngFor="let actor of actors.cast">
+      <a [routerLink]="['/actors', actor.id]">
+        <img  class="actor-img" [src]="'https://image.tmdb.org/t/p/w92/' + actor.profile_path" alt="Affiche du film" />
+      </a>
+    </div>
+  </div>
+</div>

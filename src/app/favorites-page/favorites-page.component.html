@@ -1,0 +1,11 @@
+<h2>Liste de favoris</h2>
+<ng-container *ngFor="let movie of favorites">
+  <p>{{movie.title}}</p>
+
+  <div class="img-container">
+    <img [src]="'https://image.tmdb.org/t/p/w92/' + movie.poster_path" alt="Affiche du film" />
+  </div>
+  <div>
+    <i class="fa-sharp fa-solid fa-trash" (click)="deleteFavorite(movie)"></i>
+  </div>
+</ng-container>

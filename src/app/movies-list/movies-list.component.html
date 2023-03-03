@@ -1,0 +1,23 @@
+<div class="movies-container">
+  <div class="movie-container" *ngFor="let movie of movies">
+    <a [routerLink]="['movie/', movie.id]">
+      <img
+        [src]="'https://image.tmdb.org/t/p/w92/' + movie.poster_path"
+        alt="Affiche du film"
+      />
+      <p>Sortie le {{ movie.release_date | date : "dd/MM/YYYY" }}</p>
+    </a>
+    <div class="favorite-container" *ngIf="isFavorite">
+      <i
+        class="fa-sharp fa-solid fa-heart"
+        (click)="handleFavorites(movie)"
+      ></i>
+    </div>
+    <div class="favorite-container" *ngIf="!isFavorite">
+      <i
+        class="fa-sharp fa-regular fa-heart"
+        (click)="handleFavorites(movie)"
+      ></i>
+    </div>
+  </div>
+</div>

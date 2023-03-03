@@ -1,0 +1,14 @@
+.movies-container{
+  display: flex;
+  gap : 2px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+}
+.movie-container{
+  width: 150px;
+}
+img{
+  width: 100%;
+}
+
