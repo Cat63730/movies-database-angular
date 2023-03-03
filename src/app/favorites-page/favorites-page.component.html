@@ -3,7 +3,7 @@
   <p>{{movie.title}}</p>
 
   <div class="img-container">
-    <img [src]="'https://image.tmdb.org/t/p/w92/' + movie.poster_path" alt="Affiche du film" />
+    <img [src]="'https://image.tmdb.org/t/p/original/' + movie.poster_path" alt="Affiche du film" />
   </div>
   <div>
     <i class="fa-sharp fa-solid fa-trash" (click)="deleteFavorite(movie)"></i>

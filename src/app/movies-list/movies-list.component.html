@@ -2,7 +2,7 @@
   <div class="movie-container" *ngFor="let movie of movies">
     <a [routerLink]="['movie/', movie.id]">
       <img
-        [src]="'https://image.tmdb.org/t/p/w92/' + movie.poster_path"
+        [src]="'https://image.tmdb.org/t/p/original/' + movie.poster_path"
         alt="Affiche du film"
       />
       <p>Sortie le {{ movie.release_date | date : "dd/MM/YYYY" }}</p>

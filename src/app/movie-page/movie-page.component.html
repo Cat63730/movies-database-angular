@@ -6,7 +6,7 @@
   <p>Sortie le {{movie.release_date | date : "dd/MM/YYYY"}} </p>
   <p class="overview">{{movie.overview}}</p>
   <div class="img-container">
-    <img [src]="'https://image.tmdb.org/t/p/w92/' + movie.poster_path" alt="Affiche du film" />
+    <img [src]="'https://image.tmdb.org/t/p/original/' + movie.poster_path" alt="Affiche du film" />
   </div>
   <div class="favorite-container" *ngIf="isFavorite">
     <i class="fa-sharp fa-solid fa-heart" (click)="handleFavorites(movie)"></i>
@@ -17,7 +17,7 @@
   <div class="actors-container">
     <div class="actors" *ngFor="let actor of actors.cast">
       <a [routerLink]="['/actors', actor.id]">
-        <img  class="actor-img" [src]="'https://image.tmdb.org/t/p/w92/' + actor.profile_path" alt="Affiche du film" />
+        <img  class="actor-img" [src]="'https://image.tmdb.org/t/p/original/' + actor.profile_path" alt="Affiche du film" />
       </a>
     </div>
   </div>
